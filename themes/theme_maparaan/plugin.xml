@@ -1,0 +1,15 @@
+<plugin>
+  	<nom>Maparaan</nom>
+  	<version>1.0.0</version>
+  	<auteur>Guillaume Michard ([OpenStudio->http://www.openstudio.fr/]), d'apr&egrave;s le th&egrave;me [Maparaan->http://www.paddsolutions.com/wordpress-theme-maparaan/]
+ chez [Padd Solutions->http://www.paddsolutions.com/]</auteur>
+  	<licence><a href='http://www.gnu.org/licenses/gpl.html' rel='licence'>GNU General Public License</a></licence>
+  	<description>
+	Un th&egrave;me 3 colonnes, gris et rouge
+  	</description>
+  	<icon>vignette.jpg</icon>
+	<prefix>theme_maparaan</prefix>
+	<etat>stable</etat>
+	<utilise id="Z" version="[1.2.0;]" />
+	<categorie>theme</categorie>
+</plugin>

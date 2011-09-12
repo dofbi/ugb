@@ -1,0 +1,68 @@
+[(#REM)	Liste les plus populaires ]
+<B_hitparade>
+<div class="padd-box padd-footer-popular-posts">
+	<h2><:maparaan:articles_populaires:></h2>
+	<div class="padd-interior">
+		<ul>
+			<BOUCLE_hitparade(ARTICLES){id_rubrique?}{!par popularite}{0,5}>
+				<li><span class="padd-wrap"><a href="#URL_ARTICLE">[(#TITRE)]</a>
+					<B_auteurhitparade>
+					<:maparaan:par:> 
+					<BOUCLE_auteurhitparade(AUTEURS){id_article}{', '}>#NOM</BOUCLE_auteurhitparade>
+					</B_auteurhitparade>
+					[(#POPULARITE|>{0}|oui) &#40;#POPULARITE %&#41;]
+				</span></li>
+			</BOUCLE_hitparade>
+		</ul>
+	</div>
+</div>
+</B_hitparade>
+	
+[(#REM)	Liste les plus récents commentaires ]
+<B_comsrecents>
+<div class="padd-box padd-footer-recent-comments">
+	<h2><:maparaan:commentaires_recents:></h2>
+	<div class="padd-interior">
+		<ul class="padd-comments-recent">
+			<BOUCLE_comsrecents(FORUMS){!par date}{0,5}>
+				<li class="padd-comments-recent"><span class="padd-wrap">[(#DATE*|affdate_court)] - 
+				[(#ID_AUTEUR|oui)
+				<a href="#URL_AUTEUR">#NOM</a>
+				]
+				[(#ID_AUTEUR|non)
+					#NOM
+				]
+				<:maparaan:sur:> <a href="#URL_FORUM">[(#TITRE)]</a></span></li>
+			</BOUCLE_comsrecents>
+		</ul>
+	</div>
+</div>
+</B_comsrecents>
+
+[(#REM)	Pages / PLUGIN MENUS ]
+
+<BOUCLE_menus(MENUS ?){identifiant=piednav}>#SET{titre_menu, #TITRE}</BOUCLE_menus>
+[(#PLUGIN{menus}|oui)
+	[(#INCLURE{fond=inclure/menu, env, identifiant=piednav}|oui)
+	<div class="padd-box padd-box-small padd-footer-pages">
+		<h2>#GET{titre_menu}</h2>
+		<div class="padd-interior">
+			<div id="nav"><INCLURE{fond=inclure/menu, env, identifiant=piednav}></div>
+		</div>
+	</div>
+	]
+]
+
+<B_sites>
+<div class="padd-box padd-box-small padd-footer-blogroll">
+	<h2><:maparaan:sites:></h2>
+	<div class="padd-interior">
+		<ul>
+			<BOUCLE_sites(SITES){par nom_site}>
+				<li class="padd-comments-recent"><span class="padd-wrap"><a href="[(#ID_SYNDIC|generer_url_entite{site})]">[(#NOM_SITE|couper{30})]</a></span></li>
+			</BOUCLE_sites>
+		</ul>
+	</div>
+</div>
+</B_sites>
+<div class="nettoyeur"></div>

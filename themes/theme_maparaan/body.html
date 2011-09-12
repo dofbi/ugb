@@ -1,0 +1,41 @@
+<div id="padd-header">
+	<div id="padd-header-wrapper">
+		<div class="padd-box padd-box-title">
+			[(#REM)	HEADER / ENTETE ]
+			<INCLURE{fond=inclure/entete,env}>
+		</div>
+	</div>	
+</div>
+<div id="padd-categories" class="padd-box padd-box-categories">
+	<h2>Categories</h2>
+	[(#REM)	MAIN NAVIGATION / NAVIGATION PRINCIPALE ]
+	<div id="nav" class="padd-interior">
+		<INCLURE{fond=inclure/barre-nav, env, identifiant=barrenav}>
+	</div>
+</div>
+			
+<div id="page">
+	<div id="page-wrapper">
+		<div id="contenu">		
+			[(#REM)	CONTENT / CONTENU ]
+			<INCLURE{fond=contenu/#ENV{type},env}>
+		</div>
+				
+		<div id="sidebar">
+			[(#REM)	NAVIGATION / EXTRA INFORMATIONS / Informations complementaires]
+			<INCLURE{fond=navigation/#ENV{type},env}>
+			<INCLURE{fond=extra/#ENV{type},env}>	
+		</div>
+		<div class="nettoyeur"></div>
+	</div>		
+</div>		
+
+<div id="footer">
+	[(#REM)	FOOTER / Pied de page ]
+	<div id='footer-content'>
+		<div id='footer-content-wrapper'>
+			<INCLURE{fond=inclure/pied,env}>
+			<div id="footer-copyleft"><INCLURE{fond=inc-theme-copyleft}></div>
+		</div>
+	</div>
+</div>

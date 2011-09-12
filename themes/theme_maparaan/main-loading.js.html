@@ -1,0 +1,58 @@
+function paddToggle(classname,value) {
+	jQuery(classname).focus(function() {
+		if (value == jQuery(classname).val()) {
+			jQuery(this).val('');
+		}
+	});
+	jQuery(classname).blur(function() {
+		if ('' == jQuery(classname).val()) {
+			jQuery(this).val(value);
+		}
+	});
+}
+
+jQuery(document).ready(function() {
+
+	paddToggle("input#recherche", "<:info_rechercher:>");	
+	
+	jQuery("div.search form").click(function () {
+		jQuery("input#recherche").focus();
+	});
+	
+	/****  FORMULAIRE_SITE ****/
+	paddToggle("input#nom_site","<:form_prop_nom_site:>");
+	paddToggle("input#url_site","<:form_prop_url_site:>");
+	paddToggle("textarea#description_site","<:form_prop_description:>");
+	
+	/****  FORMULAIRE_SIGNATURE / Petition  ****/
+	paddToggle("input#session_nom","<:form_pet_votre_nom:>");
+	paddToggle("input#session_email","<:form_pet_votre_email:>");
+	paddToggle("input#signature_nom_site","<:form_pet_nom_site2:>");
+	paddToggle("input#signature_url_site","<:form_pet_adresse_site:>");
+	paddToggle("textarea#message","<:maparaan:form_pet_message_commentaire:>");
+	
+	/****  FORMULAIRE_FORUM  ****/
+	paddToggle("input#titre","<:forum_titre:>");
+	paddToggle("textarea#texte","<:maparaan:texte_message:>");
+	/* cf. FORMULAIRE_SITE : nom_site, url_site. */
+	/****  FORMULAIRE_INC-LOGIN_FORUM  ****/
+	paddToggle("input#session_nom","<:maparaan:forum_votre_nom:>");
+	paddToggle("input#session_email","<:maparaan:forum_votre_email:>");
+	
+	/****  FORMULAIRE_INSCRIPTION ****/
+	paddToggle("input#nom_inscription","<:form_pet_votre_nom:>");
+	paddToggle("input#mail_inscription","<:form_pet_votre_email:>");
+	
+	/****  FORMULAIRE_ECRIRE_AUTEUR ****/
+	paddToggle("input.email_message_auteur","<:form_pet_votre_email:>");
+	paddToggle("input.sujet_message_auteur","<:form_prop_sujet:>");
+	paddToggle("textarea.texte_message_auteur","<:maparaan:texte_message:>");
+	
+	/****  FORMULAIRE_LOGIN ****/
+	paddToggle("input#var_login","<:maparaan:login_login2:>");
+	paddToggle("input#password","<:maparaan:login_pass2:>");
+	
+	/****  FORMULAIRE_OUBLI ****/
+	paddToggle("input#oubli","<:form_pet_votre_email:>");
+	
+});
