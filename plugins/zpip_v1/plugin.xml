@@ -1,0 +1,35 @@
+<plugin>
+	<nom>Zpip-dist v1</nom>
+	<auteur>Matthieu Marcillaud, C&eacute;dric Morin, Romy Tetue, Collectif SPIP</auteur>
+	<icon>img/zpip-128.png</icon>
+	<licence>GNU/GPL</licence>
+	<version>1.7.15</version>
+	<etat>stable</etat>
+	<description>Squelettes Z pour SPIP (Zpip)
+_ Syst&egrave;me de squelette
+_ Un squelette comme <code>squelettes-dist/</code> de SPIP,
+avec une organisation et une modularit&eacute; optimis&eacute;e, 
+et qui permet d'utiliser les th&egrave;mes de [->http://www.spip-contrib.net/Themes]
+	</description>
+	<prefix>Z</prefix>
+	<fonctions>z_pipelines.php</fonctions>
+	<options>z_options.php</options>
+	<pipeline>
+		<nom>declarer_url_objets</nom>
+		<inclure>z_pipelines.php</inclure>
+	</pipeline>
+	<pipeline>
+		<nom>styliser</nom>
+		<inclure>z_pipelines.php</inclure>
+	</pipeline>
+	<pipeline>
+		<nom>insert_head</nom>
+		<inclure>z_pipelines.php</inclure>
+	</pipeline>
+	<pipeline>
+		<nom>pre_propre</nom>
+		<inclure>z_pipelines.php</inclure>
+	</pipeline>
+	<categorie>squelette</categorie>
+	<necessite id="SPIP" version="[2.0.10;3.1.0)" />
+</plugin>
