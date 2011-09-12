@@ -1,0 +1,22 @@
+<plugin>
+	<nom><multi>
+	[en]BluePrint
+	</multi></nom>
+	<auteur>[Blueprint community->http://www.blueprintcss.org/] adapt&eacute; pour Zpip par [C&eacute;dric Morin->http://www.yterium.com]</auteur>
+	<licence>GPL</licence>
+  <version>0.9.0</version>
+	<description><multi>
+	[fr]Un th&egrave;me de base fond&eacute; sur [BluePrint->http://www.blueprintcss.org/] pour d&eacute;velopper un site.
+_ Ce th&egrave;me n'est pas pr&ecirc;t à &ecirc;tre utilis&eacute; en l'&eacute;tat, mais pose les &eacute;l&eacute;ments de base pour construire un habillage complet.
+_ Documentation : spip.php?page=demo/blueprint
+	[en]Theme based on [BluePrint->http://www.blueprintcss.org/] to use as a foundation for website development
+_ This theme is not ready	to use, but it settles basic elements in order to build a skin on.
+_ Documentation : spip.php?page=demo/blueprint
+	</multi>
+	</description>
+  <icon>vignette.jpg</icon>
+  <etat>stable</etat>
+  <prefix>theme_blueprint</prefix>
+	<utilise id="Z" version="[1.2.0;]" />
+	<categorie>theme</categorie>
+</plugin>
