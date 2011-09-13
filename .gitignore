@@ -1,3 +1,5 @@
 tmp/
 config/connect.php
 local/cache-*/
+local/test-*
+local/test_*

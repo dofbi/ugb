@@ -1,0 +1,164 @@
+<div id="padd-search-maparaan">#FORMULAIRE_RECHERCHE</div>
+
+<div class="contenu-principal">
+	<div class="cartouche invisible">
+		<h1 class="h1 invisible">#NOM_SITE_SPIP</h1>
+	</div>
+</div>
+
+	
+<div id="padd-featsubs">
+	<div id="padd-featsubs-wrapper">
+		<div id="padd-featured" class="padd-box">
+			<h2><:derniers_articles:></h2>
+			<div class="padd-interior">				
+				<div id="s3slider">
+					<ul id="s3sliderContent">
+						[(#REM) Affiche les 4 articles les plus récents associés au mot-clé : slider]	
+						<BOUCLE_articles(ARTICLES) {titre_mot=slider} {!par date} {0, 4}>
+							<li class="s3sliderImage" id="featured-#ID_ARTICLE">
+								<a href="#URL_ARTICLE">							
+									#SET{largeur,(#LOGO_ARTICLE_RUBRIQUE|largeur)}
+									#SET{hauteur,(#LOGO_ARTICLE_RUBRIQUE|hauteur)}								
+									#SET{l_slider,650}							
+									#SET{h_slider,280}
+									#SET{ratio_slider,#GET{l_slider}|div{#GET{h_slider}}}
+									#SET{ratio_logo,#GET{largeur}|div{#GET{hauteur}}}
+									#SET{ratio_logo_inv,#GET{hauteur}|div{#GET{largeur}}}
+									
+									#SET{new_h_logo,#GET{ratio_logo_inv}|mult{#GET{l_slider}}}
+									#SET{new_l_logo, #GET{ratio_logo}|mult{#GET{h_slider}}}
+									
+									[(#GET{largeur}|<{#GET{l_slider}}|ou{#GET{hauteur}|<{#GET{h_slider}}}|?{										
+										[(#GET{ratio_logo}|<={#GET{ratio_slider}}|oui) [(#LOGO_ARTICLE_RUBRIQUE|inserer_attribut{style, width:650px; height:#GET{new_h_logo}px})]]
+										[(#GET{ratio_logo}|<={#GET{ratio_slider}}|non) [(#LOGO_ARTICLE_RUBRIQUE|inserer_attribut{style, height:280px; width:#GET{new_l_logo}px})]]
+										,
+										[(#GET{ratio_logo}|<={#GET{ratio_slider}}|oui) [(#LOGO_ARTICLE_RUBRIQUE||image_reduire{650,0}|image_recadre{650, 280, center})]]
+										[(#GET{ratio_logo}|<={#GET{ratio_slider}}|non) [(#LOGO_ARTICLE_RUBRIQUE||image_reduire{0,280}|image_recadre{650, 280, center})]]
+									})]
+								</a>
+								[<span class="right"><strong><a href="#URL_ARTICLE">#TITRE</a></strong>(#INTRODUCTION|couper{370, '...'})</span>]
+							</li>
+						</BOUCLE_articles>
+						</B_articles>
+						[(#REM) Sinon : Affiche les 4 articles les plus récents ]
+						<BOUCLE_articles_sec(ARTICLES) {!par date} {0, 4}>
+							<li class="s3sliderImage" id="featured-#ID_ARTICLE">
+								<a href="#URL_ARTICLE">															
+									#SET{largeur,(#LOGO_ARTICLE_RUBRIQUE|largeur)}
+									#SET{hauteur,(#LOGO_ARTICLE_RUBRIQUE|hauteur)}								
+									#SET{l_slider,650}							
+									#SET{h_slider,280}
+									#SET{ratio_slider,#GET{l_slider}|div{#GET{h_slider}}}
+									#SET{ratio_logo,#GET{largeur}|div{#GET{hauteur}}}
+									#SET{ratio_logo_inv,#GET{hauteur}|div{#GET{largeur}}}
+									
+									#SET{new_h_logo,#GET{ratio_logo_inv}|mult{#GET{l_slider}}}
+									#SET{new_l_logo, #GET{ratio_logo}|mult{#GET{h_slider}}}
+									
+									[(#GET{largeur}|<{#GET{l_slider}}|ou{#GET{hauteur}|<{#GET{h_slider}}}|?{										
+										[(#GET{ratio_logo}|<={#GET{ratio_slider}}|oui) [(#LOGO_ARTICLE_RUBRIQUE|inserer_attribut{style, width:650px; height:#GET{new_h_logo}px})]]
+										[(#GET{ratio_logo}|<={#GET{ratio_slider}}|non) [(#LOGO_ARTICLE_RUBRIQUE|inserer_attribut{style, height:280px; width:#GET{new_l_logo}px})]]
+										,
+										[(#GET{ratio_logo}|<={#GET{ratio_slider}}|oui) [(#LOGO_ARTICLE_RUBRIQUE||image_reduire{650,0}|image_recadre{650, 280, center})]]
+										[(#GET{ratio_logo}|<={#GET{ratio_slider}}|non) [(#LOGO_ARTICLE_RUBRIQUE||image_reduire{0,280}|image_recadre{650, 280, center})]]
+									})]
+								</a>
+								[<span class="right"><strong><a href="#URL_ARTICLE">#TITRE</a></strong>(#INTRODUCTION|couper{370, '...'})</span>]
+							</li>
+						</BOUCLE_articles_sec>
+						<//B_articles>
+						<div class="clear s3sliderImage"></div>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="padd-subscribed">
+			<h2><:maparaan:suivre_site:></h2>
+			<div class="padd-interior">
+			[(#PLUGIN{menus}|oui)
+				[(#INCLURE{fond=inclure/barre-nav, env, identifiant=slidernav}|oui)<INCLURE{fond=inclure/menu, env, identifiant=slidernav}>]
+			]
+			[(#PLUGIN{menus}|non)
+				
+				<ul>
+					<li class="rss">
+						<a href="spip.php?page=backend" title="Flux RSS">Flux RSS</a>
+					</li>
+					<li class="contact">
+						<a href="spip.php?auteur1" title="Contactez-nous">Contactez-nous</a>
+					</li>
+					<li class="twitter">
+						<a href="#" title="#NOM_SITE_SPIP sur Twitter">Suivre mes Tweets</a>
+					</li>
+					<li class="facebook">
+						<a href="#" title="#NOM_SITE_SPIP sur Facebook">Suivez-nous sur Facebook</a>
+					</li>
+				</ul>
+				
+			]
+			</div>
+		</div>
+		<div class="padd-clear"></div>
+	</div>
+</div>
+
+
+<div id="padd-content">
+	<div id="padd-content-wrapper">
+		<div class="padd-post-group padd-post-group-index">
+			<div class="padd-post-group-title">
+				<h2><:accueil_site:></h2>
+			</div>
+			
+			<div class="padd-post-list">
+			
+				<BOUCLE_articles2(ARTICLES) {!par date} {4, 2} {"<div class='marge'></div>"}>
+				<div class="padd-post-item padd-post-item-index">
+					<div class="padd-post-item-title">
+						<h2>#TITRE</h2>
+					</div>
+					<div class="padd-post-item-entry">
+						[(#INTRODUCTION|couper{400, '...'})]
+						<p class="lirelasuite"><a href="#URL_ARTICLE"><:zpip:lire_la_suite:></a></p>
+					</div>
+				</div>
+				</BOUCLE_articles2>
+				
+				<B_breves>
+					<div class="padd-post-item padd-post-item-index padd-post-item-index-2">
+						<div class="padd-post-item-title">
+							<h2><:dernieres_breves:></h2>
+						</div>
+						<div class="padd-interior">
+							<div class="padd-interior-wrapper">	
+								<ul>
+									<BOUCLE_breves(BREVES) {tout}{!par date}{0, 5}>
+									<li><span class="padd-wrap breves-rub"><BOUCLE_breves_rub(RUBRIQUES) {id_rubrique}><small class="breves-rub-texte">#TITRE</small></BOUCLE_breves_rub><a href="#URL_BREVE">#TITRE</a>[  &ndash;  (#DATE|affdate_jourcourt)]</span></li>
+									</BOUCLE_breves>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</B_breves>
+				
+					<BOUCLE_articles3(ARTICLES) {!par date} {6, 1} {"<div class='marge'></div>"}>
+					<div class="padd-post-item padd-post-item-index padd-post-item-index-2">
+						<div class="padd-post-item-title">
+							<h2>#TITRE</h2>
+						</div>
+						<div class="padd-post-item-entry">
+							[(#INTRODUCTION|couper{400, '...'})]
+							<p class="lirelasuite"><a href="#URL_ARTICLE"><:zpip:lire_la_suite:></a></p>
+						</div>
+					</div>
+					</BOUCLE_articles3>
+				
+				<//B_breves>				
+				
+				<div class="nettoyeur"></div>
+				
+			</div>
+		</div>
+	</div>
+</div>

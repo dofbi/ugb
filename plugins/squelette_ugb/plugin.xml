@@ -1,0 +1,24 @@
+<plugin>
+	<nom>Squelette ugb</nom>
+	<version>1.0</version>
+	<etat>stable</etat>
+  	<auteur>[Universit&eacute; Gaston Berger ->http://www.ugb.sn]</auteur>
+  	<licence>&copy; ugb 2011</licence>
+  	<description>
+	Un squelette 3 colonnes. Con&ccedil;u pour fonctionner avec le th&egrave;me du m&ecirc;me nom.
+  	</description>
+  	<icon>vignette.jpg</icon>
+	<prefix>squelette_ugb</prefix>
+	<categorie>squelette</categorie>
+	<necessite id="Z" version="[1.2.0;]" />
+	<utilise id="menus" />
+	<utilise id="typoenluminee" />
+	<utilise id="socialtags" />
+	<utilise id="gravatar" />
+	<utilise id="slogan" />
+	<pipeline>
+  		<nom>insert_head</nom>
+  		<action>insertion_in_head</action>
+  		<inclure>squelette_ugb_pipelines.php</inclure>
+ 	</pipeline>
+</plugin>

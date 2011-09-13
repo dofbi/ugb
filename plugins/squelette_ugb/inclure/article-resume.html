@@ -1,0 +1,32 @@
+[(#REM)
+
+  Squelette Presentation d'un article dans une liste
+  (c) 2009 Zpip
+  Distribue sous licence GPL
+
+]
+<BOUCLE_articles(ARTICLES) {id_article} {statut?}>
+
+	<div class="padd-post-item padd-post-item-result">
+		#SET{largeur,(#LOGO_ARTICLE_RUBRIQUE|largeur)}
+		#SET{hauteur,(#LOGO_ARTICLE_RUBRIQUE|hauteur)}
+		#SET{taille, 115}
+		#SET{ratio_x,#GET{largeur}|div{#GET{taille}}}
+		#SET{ratio_y,#GET{hauteur}|div{#GET{taille}}}
+		#SET{ratio,#GET{ratio_x}|<={#GET{ratio_y}}|?{#GET{ratio_x},#GET{ratio_y}}}
+		[<a href="#URL_ARTICLE">(#LOGO_ARTICLE_RUBRIQUE||image_reduire_par{#GET{ratio}}|image_recadre{115,115,center}|sinon{<div class="pas-de-logo-article-resume"></div>})</a>]
+		
+		<div class="padd-post-item-title">
+			[<div class="info-publi" title="[(#DATE|affdate_heure)]">(#DATE|affdate_jourcourt)</div>]
+			<h2><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
+		</div>
+		<div class="padd-post-item-entry">
+			[<div class="#EDIT{intro} introduction entry-content">
+				(#INTRODUCTION|couper{320, '...'})
+				<p class="lirelasuite"><a href="#URL_ARTICLE"><:zpip:lire_la_suite:></a></p>
+				<div class="nettoyeur"></div>
+			</div>]
+		</div>
+	</div>
+	
+</BOUCLE_articles>

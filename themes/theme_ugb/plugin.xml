@@ -1,0 +1,14 @@
+<plugin>
+	<nom>UGB</nom>
+	<auteur>[Universit&eacute; Gaston Berger ->http://www.ugb.sn]</auteur>
+	<licence>&copy; ugb 2011</licence>
+  <version>0.0.1</version>
+	<description>
+	Th&eacute;me pour site [usb.sn->http://www.ugb.sn]
+	</description>
+  <icon>vignette.jpg</icon>
+  <etat>stable</etat>
+  <prefix>theme_ugb</prefix>
+	<utilise id="Z" version="[1.2.0;]" />
+	<categorie>theme</categorie>
+</plugin>
