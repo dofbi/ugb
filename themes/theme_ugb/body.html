@@ -1,32 +1,47 @@
-[(#REM)
- see http://wiki.github.com/joshuaclayton/blueprint-css/quick-start-tutorial
- for customization
-]
-<div class="container_12 showgrid">
-    <div class="grid_12 header">
-			[(#REM)	HEADER / ENTETE ]
-			#INCLURE{fond=inclure/entete,env}
-    </div>
-		<div class="grid_12 nav">
-			[(#REM)	MAIN NAVIGATION / NAVIGATION PRINCIPALE ]
-			#INCLURE{fond=inclure/barre-nav,env}
+<div id="header" class="container_12">
+	[(#REM)	HEADER / ENTETE ]
+	<INCLURE{fond=inclure/entete,env}>
+	<div id="nav_haut" class="grid_12">
+	        <div id="nav_haut_menu">
+		        <INCLURE{fond=inclure/menu, env, identifiant=navhaut}>
 		</div>
-    <div class="grid_3 sidebar">
-			[(#REM)	SECONDARY NAVIGATION SIDEBAR / Navigation laterale secondaire ]
-			#INCLURE{fond=navigation/#ENV{type},env}
-    </div>
-
-    <div class="grid_9 content">
+		<div id="nav_haut_social">
+		        <INCLURE{fond=inclure/menu-sociale, env, identifiant=sociale}>
+		</div>
+	</div>
+	<div id="nav_principale" class="grid_11 push_1">
+		<INCLURE{fond=inclure/barre-nav, env, identifiant=barrenav}>
+	</div>
+	<div id="nav_secondaire" class="grid_12">
+	        <div id="nav_secondaire_menu" class="grid_9 alpha">
+		<INCLURE{fond=inclure/barre-nav-secteurs, env, identifiant=barrenav}>
+		</div>
+		<div id="nav_secondaire_recherche" class="grid_3 omega">
+		
+		</div>
+	</div>
+</div>
+			
+<div id="page">
+	<div id="page-wrapper">
+		<div id="contenu">		
 			[(#REM)	CONTENT / CONTENU ]
-			#INCLURE{fond=contenu/#ENV{type},env}
-    </div>
+			<INCLURE{fond=contenu/#ENV{type},env}>
+		</div>
+				
+		<div id="sidebar">
+			[(#REM)	NAVIGATION / EXTRA INFORMATIONS / Informations complementaires]
+			<INCLURE{fond=navigation/#ENV{type},env}>
+			<INCLURE{fond=extra/#ENV{type},env}>	
+		</div>
+		<div class="nettoyeur"></div>
+	</div>		
+</div>		
 
-    <div class="grid_3 last extra">
-			[(#REM)	EXTRA INFORMATIONS / Informations complementaires]
-			#INCLURE{fond=extra/#ENV{type},env}
-    </div>
-    <div class="grid_12 footer">
-			[(#REM)	FOOTER / Pied de page ]
-			#INCLURE{fond=inclure/pied,env}
-    </div>
+<div id="footer">
+	[(#REM)	FOOTER / Pied de page ]
+	<div id='footer-content'>
+			<INCLURE{fond=inclure/pied,env}>
+			<div id="footer-copyleft"><INCLURE{fond=inc-theme-copyleft}></div>
+	</div>
 </div>

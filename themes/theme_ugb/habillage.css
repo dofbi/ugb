@@ -4,3 +4,227 @@
 /* ----------------------------------------------
 personalisations
 ------------------------------------------------ */
+
+body{
+        background-color: #ECE2D8;
+        background-image: url(img/fond.gif);
+        background-repeat: repeat-x;
+        
+        
+}
+body.page_sommaire div#sidebar { display:none; }
+body.page_sommaire div#contenu { width:100%; }
+
+/*header*/
+div#logo{
+        position:absolute;
+        z-index:1000;
+}
+div#header{}
+div#nav_haut { 
+        margin: 0;
+}
+div#nav_haut #nav_haut_menu{ 
+        background-color: #9F4F0D;
+        float:left;
+        margin: 0 0 0 50px;
+        padding: 0 0 0 70px;
+        width: 718px;
+}
+div#nav_haut ul{ 
+        height:17px;
+        float:left;
+        margin:0;
+        padding:3px 0 0 0;
+}
+div#nav_haut ul li{ 
+        display:inline;
+        float:left;
+}
+div#nav_haut #nav_haut_menu ul li{ 
+        padding: 0 10px;
+}
+div#nav_haut #nav_haut_social{
+        background-color: #9F4F0D;
+        float:right;
+        padding: 0 10px 0 0;
+}
+div#nav_haut #nav_haut_social ul li{ 
+        padding: 0 3px;
+}
+div#nav_haut #nav_haut_social ul li strong{ 
+        display:none;
+}
+div#nav_haut #nav_haut_social ul li a{ 
+        background-image: url(img/fb.gif);
+        background-repeat: no-repeat;
+        width:17px;
+        height:17px;
+        float:left;
+}
+div#nav_haut #nav_haut_social ul li.fb a{ 
+        background-position: 0 0;
+}
+div#nav_haut #nav_haut_social ul li.in a{ 
+        background-position: -23px 0;
+}
+div#nav_haut #nav_haut_social ul li.tw a{ 
+        background-position: -45px 0;
+}
+div#nav_haut #nav_haut_social ul li.bl a{ 
+        background-position: -67px 0;
+}
+div#nav_principale{
+        float:left;
+        background-color: #ffffff;
+        padding: 1px 0 3px;
+}
+div#nav_principale div.menu-conteneur{
+        background-color: #CB670F;
+        float:left;
+        padding: 0 0 0 40px;
+        width: 830px;
+}
+div#nav_principale div.menu-conteneur ul {
+        margin:0;
+        padding:0;
+}
+div#nav_principale div.menu-conteneur ul li{
+        display:inline;
+        float:left;
+}
+div#nav_principale div.menu-conteneur ul li a{
+        font-weight: bold;
+        height:27px;
+        float:left;
+        padding: 20px 10px 0;
+}
+div#nav_principale div.menu-conteneur ul li:first-child a{
+        padding: 20px 10px 0 50px;
+}
+div#nav_principale div.menu-conteneur ul li a:hover{
+        font-weight: bold;
+        text-decoration: none;
+        color:#CB670F;
+        background-color: #ffffff;
+        float:left;
+}
+div#nav_secondaire{
+        margin: 0;
+}
+div#nav_secondaire #nav_secondaire_menu{ 
+        float:left;
+        padding:0;
+        width: 690px;
+        margin:0;
+}
+div#nav_secondaire ul{ 
+        height:22px;
+        margin: 0 0 0 75px;
+        padding:12px 0 0 0;
+        background-color: #E5B386
+}
+div#nav_secondaire ul li{ 
+        display:inline;
+}
+div#nav_secondaire #nav_secondaire_menu ul li{ 
+}
+div#nav_secondaire #nav_secondaire_menu ul li a{ 
+        font-weight: bold;
+        padding: 0 10px;
+        font-size: 0.925em;
+}
+div#nav_secondaire #nav_secondaire_menu ul li a{ 
+        text-decoration: none;
+}
+div#nav_secondaire #nav_secondaire_recherche{ 
+        height:34px;
+        background-color: #E5B386;
+        float:right;
+        width: 230px;
+        margin:0;
+}
+
+/*formulaire*/
+div#formulaire_recherche { position:absolute; top:33px; width:231px; float:right; height: 36px; margin:0 0 0 60px; }
+.page_sommaire div#padd-search-maparaan { position:relative; float:right; top:-87px; width:470px; right:0px; margin:0; }
+.page_sommaire div#padd-search-maparaan div#formulaire_recherche {  margin:0 0 0 1px; }
+div#formulaire_recherche p { display: block; margin: 0; padding: 0; }
+div#formulaire_recherche span.padd-search-text { display: none; }
+div#formulaire_recherche label { display: none; }
+div#formulaire_recherche input[type='text'] { width: 170px; border: 0 none; padding: 10px 50px 12px 15px; margin: 0; }
+div#formulaire_recherche input[type='text'] { color: #9a9a9a; background: transparent url('img/input-search.png') top left no-repeat; border-color: transparent; }
+div#formulaire_recherche input { font: 14px/16px 'Lucida Grande','Lucida Sans',Helvetica,Arial,sans-serif; }
+div#formulaire_recherche input[type='submit'] { position:relative; top:-40px; border:none; margin:0; padding:0; height:35px; min-width:inherit; width:35px; cursor:pointer; background:#FFF; color:#666; opacity:0; }
+div#formulaire_recherche input[type='submit'] {
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 0px;
+	
+    -moz-box-shadow: 0 0 0 0;  
+    -webkit-box-shadow: 0 0 0 0;  
+    box-shadow: 0 0 0 0; 
+}
+
+
+/*
+Footer
+*/
+div#footer a:link, div#footer a:visited, div#footer a:hover, div#footer a:active { color: #fff; }
+
+div#footer-content-wrapper { width: 960px; margin: 0 auto; padding: 20px 0; }
+
+
+div#footer-final { font: normal 10px/46px 'Lucida Grande','Lucida Sans',serif; }
+div#footer-final a { text-decoration: none; font: normal 10px/46px 'Lucida Grande','Lucida Sans',serif;  }
+
+div#footer-final-wrapper { width: 960px; margin: 0 auto; padding: 0; }
+
+div#footer-final { height: 46px; padding: 0 10px; border-top: 1px solid; }
+div#footer-final div#footer-spip { float:left; }
+div#footer-final div#footer-spip img { position:relative; top:4px; max-height:15px; }
+div#footer-final div#footer-copyleft { float:right; }
+
+div#footer-final { color: #48423d; background: #322d29 none; border-top-color: #5f5953; }
+div#footer-final a:link, div#footer-final a:visited, div#footer-final a:active { color: #48423d; }
+div#footer-final a:hover { color: #CCC }
+
+
+
+
+div#footer div.padd-box h2 { font: normal 16px/32px Georgia,serif; text-transform: uppercase; }
+div#footer div.padd-box ul li { font: normal 11px/24px Helvetica,Arial,sans-serif; }
+div#footer div.padd-box ul li a { font: normal 11px/24px Helvetica,Arial,sans-serif; }
+
+
+
+div#footer div.padd-box { width: 290px; float: left; }
+div#footer div.padd-box h2 { display: block; margin: 0 0 10px 0; padding: 0; }
+div#footer div.padd-box ul { display: block; margin: 0; padding: 1px 0 0 0; list-style-type: none; }
+div#footer div.padd-box ul li { display: block; margin: 0; padding: 2px 0 3px 0; list-style-type: none; text-indent: 16px; }
+div#footer div.padd-box ul li.menu-entree { display: block; margin: 0; padding: 0px 0 3px 0; list-style-type: none; text-indent: 16px; }
+
+div#footer div.padd-box ul li span.padd-wrap { display: block; margin: 0; padding: 0; }
+
+div#footer div.padd-box-small { width: 122px; }
+
+div#footer div.padd-footer-popular-posts { margin: 0 46px 0 0; }
+div#footer div.padd-footer-recent-comments { margin: 0 44px 0 0; }
+div#footer div.padd-footer-pages { margin: 0 46px 0 0; }
+div#footer div.padd-footer-pages ul li.menu-entree a { padding:0 0 0 12px; margin-left:-12px; }
+div#footer div.padd-footer-pages ul li.menu-entree a { background:url("../img/bullet-footer-list-item.gif") no-repeat scroll 0px 4px transparent; }
+
+
+div#footer-content { background: #48423d none; }
+
+
+div#footer div.padd-box h2 { color: #fff; }
+div#footer div.padd-box ul { color: #999; background: transparent url('../img/border-footer-list.gif') left top repeat-x; }
+div#footer div.padd-box ul li { color: #999; background: transparent url('../img/border-footer-list.gif') left bottom repeat-x; }
+div#footer div.padd-box ul li.menu-entree { color: #999; background: transparent url('../img/border-footer-list-menu-entree.gif') left bottom repeat-x; }
+div#footer div.padd-box ul li span.padd-wrap { color: #999; background: transparent url('../img/bullet-footer-list-item.gif') 3px 9px no-repeat; }
+div#footer div.padd-box ul li span.padd-wrap:hover { background-color: #56504b; }
+div#footer div.padd-box ul li.menu-entree { margin:2px 0px; position:relative;}
+div#footer div.padd-box ul li.menu-entree:hover { background-color: #56504b; }
+div#footer div.padd-box ul span.padd-wrapp-menu-entree-marge { display:block; width:4px; height: 20px; background-color:#C00; position:relative; left:-50px; }
+div#footer div.padd-box ul li.menu-entree span.padd-wrapp-menu-entree { width:5px; height:5px; float:left; position:absolute; top:9px; left:3px; background: transparent url('../img/bullet-footer-list-item.gif') 0px 0px no-repeat; }
